@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Scarcity Awareness</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(to bottom right, #74ebd5, #ACB6E5);
+            color: #333;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            animation: backgroundAnimation 15s ease-in-out infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(to bottom right, #74ebd5, #ACB6E5); }
+            50% { background: linear-gradient(to bottom right, #ff9a9e, #fad0c4); }
+            100% { background: linear-gradient(to bottom right, #74ebd5, #ACB6E5); }
+        }
+
+        /* Header Styling */
+        header {
+            background-image: url('https://via.placeholder.com/1500x500?text=Water+Scarcity+Header');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: #fff;
+            border-radius: 2px;
+            animation: underlineAnimation 2s infinite alternate;
+        }
+
+        @keyframes underlineAnimation {
+            from { width: 60px; }
+            to { width: 100px; }
+        }
+
+        /* Main Content Styling */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .content {
+            max-width: 750px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 20px;
+            text-indent: 20px;
+        }
+
+        /* Image in Content Section */
+        .content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animated Dots */
+        .content::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #007acc 0%, transparent 80%);
+            top: -150px;
+            left: -150px;
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: dotsAnimation 15s linear infinite;
+        }
+
+        @keyframes dotsAnimation {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer Styling */
+        footer {
+            background: linear-gradient(90deg, #007acc, #005fa3);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.1rem;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #ffeb3b;
+            text-decoration: none;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Button for Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #007acc;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1);
+            background: #005fa3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.4rem;
+            }
+
+            .content {
+                padding: 30px;
+                font-size: 1.1rem;
+            }
+
+            .scroll-top {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            footer p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Water Scarcity Awareness</h1>
+    </header>
+    <main>
+        <section class="content">
+            <p>
+            Water scarcity means there needs to be more water for people to use. This is a big problem in many places around the world. The main reasons are not enough rain, too much pollution, and people using too much water. When there is less rain, rivers and lakes dry up, making it hard to get water. Pollution from factories and farms makes water dirty and unsafe. People also use much water for farming and factories, leaving less for others. With enough clean water, it is easier for people to drink, cook, or stay healthy. To help, we need to save water, stop pollution, and use water carefully. We must do something to solve this problem by making a way to condense the water vapor in the air by making a large condensation plate by Peltier, which has a hot side and a cold side. We put a heat sink on the hot side to make the cold side more efficient so it condenses the water vapor from the air, and we add a heat sink on the cold side to increase the surface area.
+            </p>
+            <img src="2.jpg" alt="Image depicting water scarcity">
+            <img src="1.png" alt="Image depicting water scarcity">
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Water Awareness Campaign</p>
+        <p>Learn more at <a href="https://example.com" target="_blank">example.com</a></p>
+    </footer>
+
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Scroll to Top Button Functionality
+        const scrollButton = document.querySelector(".scroll-top");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+
+</html>
